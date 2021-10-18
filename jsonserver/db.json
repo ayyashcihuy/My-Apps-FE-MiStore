@@ -1,0 +1,128 @@
+{
+  "addSeller": [
+    {
+      "id": 1,
+      "nama": "Toko Saiful",
+      "kota": "Banjarmasin"
+    },
+    {
+      "nama": "Toko Bambang",
+      "kota": "Depok",
+      "id": 2
+    },
+    {
+      "nama": "Toko Pemuda",
+      "kota": "Padang",
+      "id": 3
+    },
+    {
+      "nama": "Toko Pemudi",
+      "kota": "Nusa Tenggara Timur",
+      "id": 4
+    },
+    {
+      "nama": "Toko Budi",
+      "kota": "Jakarta",
+      "id": 5
+    },
+    {
+      "nama": "Toko Maya",
+      "kota": "Bogor",
+      "id": 6
+    },
+    {
+      "nama": "Toko Budi",
+      "kota": "Padang",
+      "id": 7
+    },
+    {
+      "nama": "Toko Risman",
+      "kota": "Kutek",
+      "id": 8
+    },
+    {
+      "nama": "Toko Maya",
+      "kota": "Bogor",
+      "id": 9
+    },
+    {
+      "nama": "Toko Budi",
+      "kota": "Tanggerang",
+      "id": 10
+    }
+  ],
+  "addProduct": [
+    {
+      "sellerId": 1,
+      "namaProduk": "Batok Kelapa",
+      "satuan": "kg",
+      "hargaSatuan": 100000,
+      "deskripsi": "Batok Kelapa Spesial Banjarmasin",
+      "id": 1
+    },
+    {
+      "sellerId": 3,
+      "namaProduk": "Kripik SingKron",
+      "satuan": "kg",
+      "hargaSatuan": 45000,
+      "deskripsi": "Makanan apa yang sambung menyambung",
+      "id": 2
+    },
+    {
+      "sellerId": 7,
+      "namaProduk": "Kripik Singkron",
+      "satuan": "kg",
+      "hargaSatuan": 45000,
+      "deskripsi": "Mantap",
+      "id": 3
+    },
+    {
+      "sellerId": 7,
+      "namaProduk": "Kripik Singkron",
+      "satuan": "kg",
+      "hargaSatuan": 45000,
+      "deskripsi": "Mantap",
+      "id": 4
+    },
+    {
+      "sellerId": 7,
+      "namaProduk": "Kripik Singkron",
+      "satuan": "kg",
+      "hargaSatuan": 50000,
+      "deskripsi": "Mantap",
+      "id": 5
+    },
+    {
+      "sellerId": 7,
+      "namaProduk": "Kripik Singkron",
+      "satuan": "kg",
+      "hargaSatuan": 50000,
+      "deskripsi": "Mantap",
+      "id": 6
+    },
+    {
+      "sellerId": 2,
+      "namaProduk": "Kripik Singkron ",
+      "satuan": "kg",
+      "hargaSatuan": 70000,
+      "deskripsi": "Mantap",
+      "id": 7
+    },
+    {
+      "sellerId": 2,
+      "namaProduk": "Kripik Singkron ",
+      "satuan": "kg",
+      "hargaSatuan": 70000,
+      "deskripsi": "Mantap",
+      "id": 8
+    },
+    {
+      "sellerId": 2,
+      "namaProduk": "Kripik Singkron",
+      "satuan": "kg",
+      "hargaSatuan": 70000,
+      "deskripsi": "Mantap",
+      "id": 9
+    }
+  ]
+}
