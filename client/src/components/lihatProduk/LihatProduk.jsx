@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router";
-import { fetchDataById } from "../../store/action";
+import { fetchProductById } from "../../store/action";
 
 function LihatProduk(props) {
   const location = useLocation();
@@ -13,7 +13,7 @@ function LihatProduk(props) {
   });
 
   useEffect(() => {
-    dispatch(fetchDataById(id));
+    dispatch(fetchProductById(id));
   }, [dispatch, id]);
 
   return (

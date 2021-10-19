@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setStatus, tambah_Produk } from "../../store/action";
+import { setStatus, addProduct } from "../../store/action";
 import Swal from "sweetalert2";
-import { useHistory, useLocation } from "react-router";
+import { useHistory } from "react-router";
+import "./addProduct.style.css";
 
 function TambahProduk() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const location = useLocation();
-  const [namaProduk, setNamaProduk] = useState("");
+  const [sellerId, setSellerId] = useState("");
+  const [nama, setNama] = useState("");
   const [satuan, setSatuan] = useState("");
   const [hargaSatuan, setHargaSatuan] = useState("");
   const [deskripsi, setDeskripsi] = useState("");
@@ -26,29 +27,37 @@ function TambahProduk() {
   }, [status, dispatch, history]);
 
   function initiateTambahProduk() {
-    if (namaProduk && satuan && hargaSatuan && deskripsi) {
+    if (nama && satuan && hargaSatuan && deskripsi) {
       const data = {
-        sellerId: location.state.params,
-        namaProduk,
+        sellerId: +sellerId,
+        nama,
         satuan,
         hargaSatuan: +hargaSatuan,
         deskripsi,
       };
-      dispatch(tambah_Produk(data));
+      dispatch(addProduct(data));
     } else {
       Swal.fire("Fail!!", "Kamu belum mengisi form dengan lengkap");
     }
   }
 
   return (
-    <div>
+    <div className="textBox">
       <h1>Tambah Produk</h1>
+      <label>Nomor Penjual</label>
+      <input
+        type="text"
+        value={sellerId}
+        onChange={(e) => {
+          setSellerId(e.target.value);
+        }}
+      />
       <label>Nama Produk</label>
       <input
         type="text"
-        value={namaProduk}
+        value={nama}
         onChange={(e) => {
-          setNamaProduk(e.target.value);
+          setNama(e.target.value);
         }}
       />
       <label>Satuan</label>

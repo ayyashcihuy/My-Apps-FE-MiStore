@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setStatus, tambah_Toko, fetchData } from "../../store/action";
+import { setStatus, tambah_Toko } from "../../store/action";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router";
 import { useEffect } from "react";
+import "./addShop.style.css";
 
 function TambahToko() {
   const dispatch = useDispatch();
@@ -20,7 +21,6 @@ function TambahToko() {
     if (status) {
       history.push("/");
       dispatch(setStatus());
-      dispatch(fetchData());
     }
   }, [status]);
 
@@ -36,7 +36,7 @@ function TambahToko() {
     }
   }
   return (
-    <div>
+    <div className="textBox">
       <h1>Tambah Toko</h1>
       <label>Nama Toko</label>
       <input

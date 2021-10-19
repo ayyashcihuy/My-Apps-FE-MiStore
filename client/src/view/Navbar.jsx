@@ -1,5 +1,5 @@
-import "./navbar.style.css";
 import { useHistory } from "react-router";
+import "./navbar.style.css";
 
 function Navbar() {
   const history = useHistory();
@@ -13,12 +13,6 @@ function Navbar() {
   }
   return (
     <div>
-      {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <NavLink to="/">Alamipedia</NavLink>
-          <NavLink to="/tambah-toko">Tambah Toko</NavLink>
-        </div>
-      </nav> */}
       <header>
         <div className="container">
           <nav className="navbar">
@@ -30,7 +24,7 @@ function Navbar() {
                   toHome();
                 }}
               >
-                AlamiStore.
+                AlamiStore
               </a>
               <div
                 id="bars"
@@ -39,10 +33,6 @@ function Navbar() {
                 }}
               >
                 <a href="#" className="navbar__brand__add">
-                  <span
-                    class="iconify"
-                    data-icon="ion:add-circle-outline"
-                  ></span>
                   Tambah Toko
                 </a>
               </div>

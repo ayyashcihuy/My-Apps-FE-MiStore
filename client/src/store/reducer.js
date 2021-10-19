@@ -24,7 +24,11 @@ function reducer(state = alamipedia, action) {
         ...state,
         listProduct: action.payload,
       };
-
+    case actionType.RESET_DATA:
+      return {
+        ...state,
+        listProduct: [],
+      };
     default:
       return state;
   }

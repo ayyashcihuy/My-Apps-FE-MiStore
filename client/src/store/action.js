@@ -3,13 +3,18 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 //Alami Test
-const jsonServerUrl1 = "http://localhost:3000/addSeller";
-const jsonServerUrl2 = "http://localhost:3000/addProduct";
 
 export const setData = (data) => {
   return {
     type: actionType.FETCH_DATA,
     payload: data,
+  };
+};
+
+export const resetList = () => {
+  console.log("mashok");
+  return {
+    type: actionType.RESET_DATA,
   };
 };
 
@@ -41,26 +46,15 @@ export const fetchProductByKeyword = (data) => {
   };
 };
 
-export const fetchDataById = (id) => {
+export const fetchProductById = (id) => {
   return (dispatch) => {
     axios
-      .get(jsonServerUrl2)
+      .get(
+        `https://dev.dummy-api.alamisharia.co.id/listProductBySellerId?seller_id=${id}
+      `
+      )
       .then(({ data }) => {
-        const result = data.filter((e) => e.sellerId === id);
-        dispatch(setData(result));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-};
-
-export const fetchData = () => {
-  return (dispatch) => {
-    axios
-      .get(jsonServerUrl1)
-      .then(({ data }) => {
-        dispatch(setData(data));
+        dispatch(setData(data.data));
       })
       .catch((err) => {
         console.log(err);
@@ -73,39 +67,43 @@ export const tambah_Toko = (data) => {
     console.log(data, "dari action");
     axios({
       method: "POST",
-      url: jsonServerUrl1,
+      url: "https://dev.dummy-api.alamisharia.co.id/addSeller",
       data,
     })
       .then(({ data }) => {
-        dispatch(setData(data));
+        console.log(data);
         dispatch(setStatus());
         Swal.fire("Success!", "Berhasil Menambah Penjual");
       })
       .catch((err) => {
-        Swal.fire(
-          `${err.response.status} !! ${err.response.statusText}`,
-          "Silahkan Coba Lagi"
-        );
+        console.log(err);
+        // Swal.fire(
+        //   `${err.response.status} !! ${err.response.statusText}`,
+        //   "Silahkan Coba Lagi"
+        // );
       });
   };
 };
 
-export const tambah_Produk = (data) => {
+export const addProduct = (data) => {
   return (dispatch) => {
+    console.log(data, "ini data mentah");
     axios({
       method: "POST",
-      url: jsonServerUrl2,
+      url: "https://dev.dummy-api.alamisharia.co.id/addProduct",
       data,
     })
       .then(({ data }) => {
+        console.log(data, "ini data");
         Swal.fire("Success!", "Berhasil Menambah Produk");
         dispatch(setStatus());
       })
       .catch((err) => {
-        Swal.fire(
-          `${err.response.status} !! ${err.response.statusText}`,
-          "Silahkan Coba Lagi"
-        );
+        console.log(err.response);
+        // Swal.fire(
+        //   `${err.response.status} !! ${err.response.statusText}`,
+        //   "Silahkan Coba Lagi"
+        // );
       });
   };
 };
