@@ -17,3 +17,29 @@
   font-size: 14px;
   color: #fff;
 }
+
+.form-box {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-box button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

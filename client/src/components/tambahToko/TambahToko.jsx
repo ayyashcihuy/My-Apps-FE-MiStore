@@ -38,29 +38,31 @@ function TambahToko() {
   return (
     <div className="textBox">
       <h1>Tambah Toko</h1>
-      <label>Nama Toko</label>
-      <input
-        type="text"
-        value={nama}
-        onChange={(e) => {
-          setNama(e.target.value);
-        }}
-      ></input>
-      <label>Kota Asal</label>
-      <input
-        type="text"
-        value={kota}
-        onChange={(e) => {
-          setKota(e.target.value);
-        }}
-      ></input>
-      <button
-        onClick={() => {
-          submitData();
-        }}
-      >
-        Simpan
-      </button>
+      <div className="form-box">
+        <label>Nama Toko</label>
+        <input
+          type="text"
+          value={nama}
+          onChange={(e) => {
+            setNama(e.target.value);
+          }}
+        ></input>
+        <label>Kota Asal</label>
+        <input
+          type="text"
+          value={kota}
+          onChange={(e) => {
+            setKota(e.target.value);
+          }}
+        ></input>
+        <button
+          onClick={() => {
+            submitData();
+          }}
+        >
+          Simpan
+        </button>
+      </div>
     </div>
   );
 }
