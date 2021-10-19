@@ -25,11 +25,10 @@ function Home() {
   return (
     <div>
       <h1>Selamat Datang di ALAMIPEDIA</h1>
-      <h1>Check Toko Terbaik Kami</h1>
-      {listToko.length > 0 ? <Card listToko={listToko} /> : <h1>Toko Tutup</h1>}
-      <label>Cari Produk</label>
+      <h1>Cari Produk Yang Kamu Butuhkan</h1>
       <input
         type="text"
+        placeholder="Cari apapun yang kamu mau"
         value={searchBox}
         onChange={(e) => {
           setSearchBox(e.target.value);
@@ -38,7 +37,7 @@ function Home() {
       {searchBox ? (
         <div>
           {listProduct ? (
-            <table>
+            <table className="container">
               <thead>
                 <tr>
                   <th>Nama Produk</th>
@@ -69,6 +68,8 @@ function Home() {
           )}
         </div>
       ) : null}
+      <h1>Check Toko Terbaik Kami</h1>
+      {listToko.length > 0 ? <Card listToko={listToko} /> : <h1>Toko Tutup</h1>}
     </div>
   );
 }
