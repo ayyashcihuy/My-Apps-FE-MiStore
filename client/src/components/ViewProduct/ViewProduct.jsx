@@ -1,3 +1,4 @@
+import "./createTable.style.css";
 import { useSelector } from "react-redux";
 
 function ProductTable() {
