@@ -3,6 +3,7 @@ const actionType = {
   FETCH_DATA: "FETCH_DATA",
   SET_STATUS: "SET_STATUS",
   SET_PRODUCT: "SET_PRODUCT",
+  RESET_DATA: "RESET_DATA",
 };
 
 export default actionType;

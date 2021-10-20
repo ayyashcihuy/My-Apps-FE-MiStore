@@ -2,14 +2,18 @@ import actionType from "./actionType";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-//Alami Test
-const jsonServerUrl1 = "http://localhost:3000/addSeller";
-const jsonServerUrl2 = "http://localhost:3000/addProduct";
+//Alami Test API
 
 export const setData = (data) => {
   return {
     type: actionType.FETCH_DATA,
     payload: data,
+  };
+};
+
+export const resetList = () => {
+  return {
+    type: actionType.RESET_DATA,
   };
 };
 
@@ -35,77 +39,70 @@ export const fetchProductByKeyword = (data) => {
       .then(({ data }) => {
         dispatch(setProduct(data.data));
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        dispatch(setData([]));
       });
   };
 };
 
-export const fetchDataById = (id) => {
+export const fetchProductById = (id) => {
   return (dispatch) => {
     axios
-      .get(jsonServerUrl2)
+      .get(
+        `https://dev.dummy-api.alamisharia.co.id/listProductBySellerId?seller_id=${id}
+      `
+      )
       .then(({ data }) => {
-        const result = data.filter((e) => e.sellerId === id);
-        dispatch(setData(result));
+        dispatch(setData(data.data));
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        dispatch(setData([]));
       });
   };
 };
 
-export const fetchData = () => {
+export const addShop = (data) => {
   return (dispatch) => {
-    axios
-      .get(jsonServerUrl1)
-      .then(({ data }) => {
-        dispatch(setData(data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-};
-
-export const tambah_Toko = (data) => {
-  return (dispatch) => {
-    console.log(data, "dari action");
     axios({
       method: "POST",
-      url: jsonServerUrl1,
+      url: "https://dev.dummy-api.alamisharia.co.id/addSeller",
       data,
     })
       .then(({ data }) => {
-        dispatch(setData(data));
         dispatch(setStatus());
-        Swal.fire("Success!", "Berhasil Menambah Penjual");
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          html: `<p>Berhasil Menambahkan Toko!</p></br><p>ID Toko: ${data.data.id}</p></br><small>Mohon simpan ID Toko untuk menggunakan fitur lainnya.</small>`,
+        });
       })
-      .catch((err) => {
-        Swal.fire(
-          `${err.response.status} !! ${err.response.statusText}`,
-          "Silahkan Coba Lagi"
-        );
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       });
   };
 };
 
-export const tambah_Produk = (data) => {
+export const addProduct = (data) => {
   return (dispatch) => {
     axios({
       method: "POST",
-      url: jsonServerUrl2,
+      url: "https://dev.dummy-api.alamisharia.co.id/addProduct",
       data,
     })
-      .then(({ data }) => {
+      .then(() => {
         Swal.fire("Success!", "Berhasil Menambah Produk");
         dispatch(setStatus());
       })
-      .catch((err) => {
-        Swal.fire(
-          `${err.response.status} !! ${err.response.statusText}`,
-          "Silahkan Coba Lagi"
-        );
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       });
   };
 };

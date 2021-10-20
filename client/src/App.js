@@ -1,24 +1,20 @@
 import "./App.css";
-import Home from "./view/Home";
-import Navbar from "./view/Navbar";
+import Home from "./view/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
 import { Switch, Route } from "react-router-dom";
-import TambahToko from "./components/tambahToko/TambahToko";
-import TambahProduk from "./components/tambahProduct/TambahProduk";
-import LihatProduk from "./components/lihatProduk/LihatProduk";
+import AddShop from "./view/AddShop/AddShop";
+import AddProduct from "./view/AddProduct/AddProduct";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Navbar />
       <Switch>
         <Route path="/tambah-produk">
-          <TambahProduk />
-        </Route>
-        <Route path="/lihat-produk">
-          <LihatProduk />
+          <AddProduct />
         </Route>
         <Route path="/tambah-toko">
-          <TambahToko />
+          <AddShop />
         </Route>
         <Route path="/">
           <Home />
@@ -26,6 +22,6 @@ function App() {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;
