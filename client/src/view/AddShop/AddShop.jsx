@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setStatus, tambah_Toko } from "../../store/action";
+import { setStatus, addShop } from "../../store/action";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router";
 import { useEffect } from "react";
 import "./addShop.style.css";
 
-function TambahToko() {
+function AddShop() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [nama, setNama] = useState("");
@@ -22,7 +22,7 @@ function TambahToko() {
       history.push("/");
       dispatch(setStatus());
     }
-  }, [status]);
+  }, [status, dispatch, history]);
 
   function submitData() {
     if (nama !== "" && kota !== "") {
@@ -30,7 +30,7 @@ function TambahToko() {
         nama,
         kota,
       };
-      dispatch(tambah_Toko(data));
+      dispatch(addShop(data));
     } else {
       Swal.fire("Fail!!", "Kamu belum mengisi form dengan lengkap");
     }
@@ -67,4 +67,4 @@ function TambahToko() {
   );
 }
 
-export default TambahToko;
+export default AddShop;

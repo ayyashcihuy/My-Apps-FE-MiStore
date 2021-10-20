@@ -46,3 +46,8 @@
 input {
   padding: 10px 20px;
 }
+
+.box {
+  padding: 10px 10px;
+  border: none;
+}

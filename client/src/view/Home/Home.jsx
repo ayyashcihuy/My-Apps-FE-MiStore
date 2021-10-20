@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import {
   fetchProductById,
   fetchProductByKeyword,
   resetList,
-} from "../store/action";
+} from "../../store/action";
 import { useDispatch, useSelector } from "react-redux";
-import ProductTable from "../components/productTable/productTable";
+import ViewProduct from "../../components/ViewProduct/ViewProduct";
 import "./home.style.css";
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
       dispatch(resetList());
       dispatch(fetchProductById(searchBox));
     }
-  }, [searchBox, searchBy]);
+  }, [searchBox, searchBy, dispatch]);
 
   function goToAddProduct() {
     history.push("/tambah-produk");
@@ -46,6 +46,9 @@ function Home() {
           </p>
           <br />
           <div>
+            {/**
+             * bug: ganti jadi navlink router
+             */}
             <a
               href="#"
               className="addProduct"
@@ -59,15 +62,13 @@ function Home() {
           <div>
             <div>
               <select
+                className="box"
                 id="searchBy"
                 name="searchBy"
                 onChange={(e) => {
                   setSearchBy(e.target.value);
                 }}
               >
-                <option value="searchByKeyword" disabled>
-                  Search By
-                </option>
                 <option value="searchByKeyword">Search By Keyword</option>
                 <option value="searchById">Search By Seller Id</option>
               </select>
@@ -84,9 +85,9 @@ function Home() {
             {searchBox ? (
               <div>
                 {listProduct ? (
-                  <ProductTable />
+                  <ViewProduct />
                 ) : (
-                  <h1> Produk yang anda Cari Belum Tersedia :( </h1>
+                  <h4> Produk yang anda Cari Belum Tersedia :( </h4>
                 )}
               </div>
             ) : null}

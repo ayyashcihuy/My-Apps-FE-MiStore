@@ -1,0 +1,29 @@
+table {
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #013c50;
+  padding: 100px;
+}
+
+th {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 1rem 2rem;
+}
+
+td {
+  padding: 1rem 2rem;
+}
+
+tr {
+  color: black;
+  padding: 2px 0;
+  margin: 2px 0;
+}

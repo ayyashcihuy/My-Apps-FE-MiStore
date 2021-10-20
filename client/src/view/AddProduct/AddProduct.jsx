@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setStatus, addProduct } from "../../store/action";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router";
 import "./addProduct.style.css";
 
-function TambahProduk() {
+function AddProduct() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [sellerId, setSellerId] = useState("");
@@ -45,7 +45,7 @@ function TambahProduk() {
     <div className="textBox">
       <h1>Tambah Produk</h1>
       <div className="form-box">
-        <label>Nomor Penjual</label>
+        <label>Id Penjual</label>
         <input
           type="text"
           value={sellerId}
@@ -71,7 +71,7 @@ function TambahProduk() {
         />
         <label>Harga Satuan</label>
         <input
-          type="text"
+          type="number"
           value={hargaSatuan}
           onChange={(e) => {
             setHargaSatuan(e.target.value);
@@ -98,4 +98,4 @@ function TambahProduk() {
   );
 }
 
-export default TambahProduk;
+export default AddProduct;

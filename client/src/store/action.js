@@ -2,7 +2,7 @@ import actionType from "./actionType";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-//Alami Test
+//Alami Test API
 
 export const setData = (data) => {
   return {
@@ -12,7 +12,6 @@ export const setData = (data) => {
 };
 
 export const resetList = () => {
-  console.log("mashok");
   return {
     type: actionType.RESET_DATA,
   };
@@ -40,8 +39,8 @@ export const fetchProductByKeyword = (data) => {
       .then(({ data }) => {
         dispatch(setProduct(data.data));
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        dispatch(setData([]));
       });
   };
 };
@@ -56,54 +55,54 @@ export const fetchProductById = (id) => {
       .then(({ data }) => {
         dispatch(setData(data.data));
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        dispatch(setData([]));
       });
   };
 };
 
-export const tambah_Toko = (data) => {
+export const addShop = (data) => {
   return (dispatch) => {
-    console.log(data, "dari action");
     axios({
       method: "POST",
       url: "https://dev.dummy-api.alamisharia.co.id/addSeller",
       data,
     })
       .then(({ data }) => {
-        console.log(data);
         dispatch(setStatus());
-        Swal.fire("Success!", "Berhasil Menambah Penjual");
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          html: `<p>Berhasil Menambahkan Toko!</p></br><p>ID Toko: ${data.data.id}</p></br><small>Mohon simpan ID Toko untuk menggunakan fitur lainnya.</small>`,
+        });
       })
-      .catch((err) => {
-        console.log(err);
-        // Swal.fire(
-        //   `${err.response.status} !! ${err.response.statusText}`,
-        //   "Silahkan Coba Lagi"
-        // );
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       });
   };
 };
 
 export const addProduct = (data) => {
   return (dispatch) => {
-    console.log(data, "ini data mentah");
     axios({
       method: "POST",
       url: "https://dev.dummy-api.alamisharia.co.id/addProduct",
       data,
     })
-      .then(({ data }) => {
-        console.log(data, "ini data");
+      .then(() => {
         Swal.fire("Success!", "Berhasil Menambah Produk");
         dispatch(setStatus());
       })
-      .catch((err) => {
-        console.log(err.response);
-        // Swal.fire(
-        //   `${err.response.status} !! ${err.response.statusText}`,
-        //   "Silahkan Coba Lagi"
-        // );
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       });
   };
 };
