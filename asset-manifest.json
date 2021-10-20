@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/My-Apps-FE-MiStore/static/css/main.c551a5ce.chunk.css",
-    "main.js": "/My-Apps-FE-MiStore/static/js/main.9e207dcf.chunk.js",
-    "main.js.map": "/My-Apps-FE-MiStore/static/js/main.9e207dcf.chunk.js.map",
-    "runtime-main.js": "/My-Apps-FE-MiStore/static/js/runtime-main.f9e1d35b.js",
-    "runtime-main.js.map": "/My-Apps-FE-MiStore/static/js/runtime-main.f9e1d35b.js.map",
-    "static/js/2.61be9669.chunk.js": "/My-Apps-FE-MiStore/static/js/2.61be9669.chunk.js",
-    "static/js/2.61be9669.chunk.js.map": "/My-Apps-FE-MiStore/static/js/2.61be9669.chunk.js.map",
-    "static/js/3.811dc339.chunk.js": "/My-Apps-FE-MiStore/static/js/3.811dc339.chunk.js",
-    "static/js/3.811dc339.chunk.js.map": "/My-Apps-FE-MiStore/static/js/3.811dc339.chunk.js.map",
+    "main.css": "/My-Apps-FE-MiStore/static/css/main.71fa4bdf.chunk.css",
+    "main.js": "/My-Apps-FE-MiStore/static/js/main.d76ccfc1.chunk.js",
+    "main.js.map": "/My-Apps-FE-MiStore/static/js/main.d76ccfc1.chunk.js.map",
+    "runtime-main.js": "/My-Apps-FE-MiStore/static/js/runtime-main.fb93e3cd.js",
+    "runtime-main.js.map": "/My-Apps-FE-MiStore/static/js/runtime-main.fb93e3cd.js.map",
+    "static/js/2.dba4f110.chunk.js": "/My-Apps-FE-MiStore/static/js/2.dba4f110.chunk.js",
+    "static/js/2.dba4f110.chunk.js.map": "/My-Apps-FE-MiStore/static/js/2.dba4f110.chunk.js.map",
+    "static/js/3.1e5b2c0a.chunk.js": "/My-Apps-FE-MiStore/static/js/3.1e5b2c0a.chunk.js",
+    "static/js/3.1e5b2c0a.chunk.js.map": "/My-Apps-FE-MiStore/static/js/3.1e5b2c0a.chunk.js.map",
     "index.html": "/My-Apps-FE-MiStore/index.html",
-    "static/css/main.c551a5ce.chunk.css.map": "/My-Apps-FE-MiStore/static/css/main.c551a5ce.chunk.css.map",
-    "static/js/2.61be9669.chunk.js.LICENSE.txt": "/My-Apps-FE-MiStore/static/js/2.61be9669.chunk.js.LICENSE.txt",
+    "static/css/main.71fa4bdf.chunk.css.map": "/My-Apps-FE-MiStore/static/css/main.71fa4bdf.chunk.css.map",
+    "static/js/2.dba4f110.chunk.js.LICENSE.txt": "/My-Apps-FE-MiStore/static/js/2.dba4f110.chunk.js.LICENSE.txt",
     "static/media/App.css": "/My-Apps-FE-MiStore/static/media/fikri-rasyid-ezeC8-clZSs-unsplash.9f5dbe7c.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f9e1d35b.js",
-    "static/js/2.61be9669.chunk.js",
-    "static/css/main.c551a5ce.chunk.css",
-    "static/js/main.9e207dcf.chunk.js"
+    "static/js/runtime-main.fb93e3cd.js",
+    "static/js/2.dba4f110.chunk.js",
+    "static/css/main.71fa4bdf.chunk.css",
+    "static/js/main.d76ccfc1.chunk.js"
   ]
 }
